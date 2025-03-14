@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Library</title>
+    <style>
+        body {
+            background-color: #F8EBFF;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            background-color: white;
+            width: 1091px;
+            height: 20px;
+            border-radius: 45px;
+            padding: 15px 54px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+            z-index: 1000; /* Ensures navbar stays on top */
+        }
+
+        /* Logo circle */
+        .logo-circle {
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            left: 65.5px;
+            top: 7px;
+            bottom: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Placeholder for the logo */
+        .logo-circle img {
+        	src: moodtuneslogo.png;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+
+        /* Navbar links */
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px 20px;
+            position: relative;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+
+       
+        .nav-links .span{
+        	background-color: #772708;
+            height: 35px;
+            width: 75px;
+            text-align: center;
+            border-radius: 5px;
+        }
+		        /* Navbar Buttons */
+		.nav-buttons {
+		    display: flex;
+		    gap: 15px;
+		    /*margin-left: auto;*/
+		    position: fixed;
+		    right: 24px;
+
+*/		}
+
+		/* General Button Styles */
+		.nav-buttons button {
+		    font-size: 16px;
+		    font-weight: 500;
+		    padding: 10px 20px;
+		    border: none;
+		    border-radius: 40px;
+		    /*display: flex;*/
+		    align-items: center;
+		    gap: 8px;
+		    cursor: pointer;
+		    transition: background 0.3s ease, color 0.3s ease;
+		    float: right;
+		}
+
+		/* Join Us Button */
+		.join-btn {
+		    background-color: #F8EBFF;
+		    color: #330808;
+		}
+
+		/* Contact Us Button */
+		.contact-btn {
+		    background-color: #330808;
+		    color: #F8EBFF;
+		}
+
+		/* Arrow Styles */
+		.nav-buttons button i {
+		    font-size: 14px;
+		}
+
+		        /* Main Heading */
+		.main-heading {
+		    font-size: 60px;
+		    font-weight: 600;
+		    color: #1E1E1E;
+		    text-align: center;
+		    padding-top: 120px; /* Adjust as needed */
+		    line-height: 1.2;
+		}
+
+		/* Subheading */
+		.sub-heading {
+		    font-size: 21px;
+		    font-weight: 400;
+		    color: #1E1E1E;
+		    text-align: center;
+		    margin-top: 10px; /* Just a few pixels from the main heading */
+		}
+				/* Arrow Styles */
+		.arrow {
+		    font-size: 16px;
+		}
+		/* Button Container */
+		.btn-container {
+		    display: flex;
+		    gap: 40px;
+		    justify-content: center;
+		    margin-top: 30px; /* Adjust spacing as needed */
+		}
+
+		/* General Button Styles */
+		.btn-container button {
+		    font-size: 18px;
+		    font-weight: 500;
+		    padding: 12px 24px;
+		    border: none;
+		    border-radius: 11px;
+		    cursor: pointer;
+		    transition: background 0.3s ease, color 0.3s ease;
+		}
+
+		/* Start Journey Button */
+		.start-btn {
+		    background-color: #330808;
+		    color: #F8EBFF;
+		}
+
+		/* Learn More Button (Transparent) */
+		.learn-btn {
+		    background-color: transparent;
+		    color: #330808;
+		}
+				/* Social Icons Container */
+		.social-icons {
+		    display: flex;
+		    gap: 10px;
+		    justify-content: center;
+		    margin-top: 10px;
+		}
+
+		/* Social Icons */
+		.social-icons img {
+		    width: 40px; /* Adjust size */
+		    height: 40px;
+		    cursor: pointer;
+		    transition: opacity 0.3s ease;
+		}
+
+		/* Hover Effect */
+		.social-icons img:hover {
+		    opacity: 0.7;
+		}
+				/* Image Container */
+		.featured-image {
+		    display: flex;
+		    justify-content: center;
+		    margin-top: 20px; /* 20px away from social icons */
+		}
+
+		/* Image Styling */
+		.featured-image img {
+		    width: 1004px;
+		    height: 508px;
+		    object-fit: cover; /* Ensures the image fits nicely */
+		    border-radius: 10px; /* Optional rounded edges */
+		}
+
+					/* Text Container */
+			.mood-text-container {
+	        display: flex;
+	        justify-content: space-between;
+	        align-items: center;
+	        width: 1004px; /* Match image width */
+	        margin: 22px auto 0 auto; /* Center container */
+	    }
+
+	    .text-content {
+	        flex: 1;
+	    }
+
+	    .search-container {
+	        display: flex;
+	        align-items: center;
+	        margin-top: 0; /* Remove previous absolute positioning */
+	        position: static; /* Reset positioning */
+	        margin-left: 20px; /* Add spacing between text and search */
+	    }
+
+	    /* Remove these old styles */
+	    .mood-text, .search-container {
+	        position: static;
+	        left: auto;
+	        transform: none;
+	        margin-left: 0;
+	    }
+
+		.options-icon {
+		    font-size: 24px;
+		    cursor: pointer;
+		    border: solid;
+		    padding: 10px;
+		    border-color: rgba(128, 128, 128, 0.1);
+		    border-top-left-radius: 28px;
+		    border-bottom-left-radius: 28px;
+		}
+
+		.search-bar {
+		    width: 360px;
+		    height: 56px;
+		    border: none;
+		    border-color:rgba(128, 128, 128, 0.1) ;
+		    padding-left: 16px;
+		    font-size: 18px;
+		    background-color:rgba(128, 128, 128, 0.1);
+		    outline: none;
+		}
+
+		.search-button {
+		    width: 56px;
+		    height: 58px;
+		    border: solid;
+		    border-color: rgba(128, 128, 128, 0.1);
+		    background-color: rgba(128, 128, 128, 0.1);
+		    cursor: pointer;
+		    border-top-right-radius: 28px;
+		    border-bottom-right-radius: 28px;
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    font-size: 20px;
+		}
+
+				.mood-circles-container {
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		    width: 90%;
+		    margin: 60px auto 0 auto;
+		    text-align: center;
+		}
+
+		.mood-item {
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		    width: 88px; /* Add fixed width to ensure consistent spacing */
+		}
+
+		.mood-circle {
+		    width: 88px;
+		    height: 88px;
+		    border-radius: 50%;
+		    background-size: cover;
+		    background-position: center;
+		    margin-bottom: 8px; /* Add space between circle and text */
+		}
+
+		/* Create a new specific class for mood circle text */
+		.mood-circle-text {
+		    font-size: 20px;
+		    color: #1E1E1E;
+		    font-weight: 500;
+		    text-align: center;
+		}
+
+						.explore-btn {
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    width: 227px;
+		    height: 54px;
+		    border-radius: 9px;
+		    background-color: white;
+		    color: #1E1E1E; /* Same color as other text */
+		    font-size: 20px;
+		    font-weight: 500;
+		    border: none;
+		    margin: 89px auto 0 auto; /* Centers the button */
+		    cursor: pointer;
+		    transition: 0.3s;
+		    
+		    /* Drop Shadow */
+		    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+		}
+
+		.explore-btn:hover {
+		    background-color: #f0f0f0; /* Light hover effect */
+		    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+		}
+
+		.arrow {
+		    margin-left: 10px; /* Adds spacing between text and arrow */
+		}
+
+		.workout-container {
+		    position: relative;
+		    width: 993px;
+		    height: 632px;
+		    margin: 162px auto 0 auto; /* Centers the image */
+		}
+
+		.workout-image {
+		    width: 100%;
+		    height: 100%;
+		    object-fit: cover;
+		    border-radius: 10px; /* Optional for smooth edges */
+		}
+
+		.workout-text {
+		    position: absolute;
+		    bottom: 98px; /* 534px - (632px - 162px - 54px) */
+		    left: 50%;
+		    transform: translateX(-50%);
+		    font-size: 40px;
+		    font-weight: 600; /* Semi-bold */
+		    color: rgba(0, 0, 0, 0.3); /* 30% opacity */
+		    text-align: center;
+		}
+
+		.workout-subtext {
+		    position: absolute;
+		    bottom: 50px; /* Adjusted for spacing */
+		    left: 50%;
+		    transform: translateX(-50%);
+		    font-size: 16px;
+		    font-weight: 400;
+		    color: rgba(255, 255, 255, 0.88); /* 88% opacity */
+		    text-align: center;
+		}
+
+		.orange-container {
+		    width: 100%;
+		    height: 1200px;
+		    background-color: #772708;
+		    margin-top: 106px;
+		    position: relative; /* Allows easy positioning of future elements */
+		}
+
+           .feature-container {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            height: 1192px;
+        }
+
+        .feature-box {
+            width: 600px;
+            height: 600px;
+            background-color: #330B0B;
+            opacity: 40%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            padding: 6px;
+            gap: 10px;
+            border-radius: 0px;
+        }
+        .feature-box img{
+            height: 600px;
+            width: 600px;
+        }
+
+              .floating-text {
+            position: absolute;
+            top: 9px;
+            left: 238px;
+            font-size: 60px;
+            font-weight: 400; /* Light semibold */
+            color: white;
+        }
+                .white-button {
+            position: absolute;
+            top: calc(9px + 60px + 115px); /* Text top + text height + 42px */
+            left: 238px;
+            width: 227px;
+            height: 54px;
+            background-color: white;
+            color: #000; /* Same color as other texts */
+            font-size: 18px;
+            font-weight: 500;
+            border: none;
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Drop shadow */
+            cursor: pointer;
+        }
+
+        .white-button:hover {
+            background-color: #f0f0f0; /* Light hover effect */
+        }
+                .get-in-touch-text {
+            position: absolute;
+            top: calc(9px + 60px + 42px + 54px + 351px); /* Previous text + button height + 351px */
+            left: 238px;
+            color: #D9D9D9;
+            font-size: 25px;
+            font-weight: 300; /* Semibold */
+            white-space: nowrap;
+        }
+                .get-in-touch-text {
+            position: absolute;
+            top: calc(9px + 60px + 42px + 54px + 351px); /* Previous text + button height + 351px */
+            left: 238px;
+            color: white;
+            font-size: 25px;
+            font-weight: 600; /* Semibold */
+            white-space: nowrap;
+        }
+
+        .questions-text {
+            position: absolute;
+            top: calc(9px + 60px + 42px + 54px + 351px + 25px + 0px); /* Previous text + margin */
+            left: 238px;
+            color: white;
+            font-size: 60px;
+            font-weight: 700; /* Bold */
+            white-space: nowrap;
+        }
+                .working-hours {
+            position: absolute;
+            bottom: 150px; /* 150px above the base of the orange container */
+            left: 238px;
+            color: #D9D9D9;
+            font-size: 25px;
+            font-weight: 300;
+            white-space: nowrap;
+        }
+                .assist-text {
+            position: absolute;
+            bottom: 120px; /* Placed just below the working hours text */
+            left: 238px;
+            color: #D9D9D9; /* Light gray color */
+            font-size: 23px;
+            font-weight: 500; /* Light font weight */
+            white-space: nowrap;
+        }
+                        
+                .send-message {
+            position: absolute;
+            left: 0;
+            bottom: 430px; /* Added bottom position */
+            text-align: left;
+            font-size: 20px;
+            font-weight: 300;
+            color: white;
+        }
+            .support-email {
+             position: absolute;
+            left: 0;
+            bottom: 371px; /* Added bottom position */
+            text-align: left;
+            font-size: 25px;
+            font-weight: 300;
+            color: #D9D9D9;
+        }
+        .follow {
+             position: absolute;
+            left: 0;
+            bottom: 200px; /* Added bottom position */
+            text-align: left;
+            font-size: 20px;
+            font-weight: 300;
+            color: #D9D9D9;
+        }
+        .IG {
+             position: absolute;
+            left: 0;
+            bottom: 150px; /* Added bottom position */
+            text-align: left;
+            font-size: 25px;
+            font-weight: 250;
+            color: #D9D9D9;
+        }
+        .FB {
+             position: absolute;
+            left: 0;
+            bottom: 78px; /* Added bottom position */
+            text-align: left;
+            font-size: 25px;
+            font-weight: 250;
+            color: #D9D9D9;
+        }
+        .X {
+             position: absolute;
+            left: 50%;
+            bottom: 150px; /* Added bottom position */
+            text-align: left;
+            font-size: 25px;
+            font-weight: 300;
+            color: #D9D9D9;
+        }
+        .LinkedIn {
+             position: absolute;
+            left: 50%;
+            bottom: 78px; /* Added bottom position */
+            text-align: left;
+            font-size: 25px;
+            font-weight: 300;
+            color: #D9D9D9;
+        }
+                .footer-container {
+            position:absolute ;
+            width: 100%;
+            height: 276px;
+            background-color: black;
+            display: flex;
+            justify-content: center; /* Centers items horizontally */
+            align-items: flex-start; /* Changed from center to flex-start */
+            gap: 10%;
+            padding-top: 110px; /* Added padding to position buttons 166px from bottom */
+        }
+        .footer-btn {
+            font-size: 17px;
+            color: white;
+            background-color: black;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out; /* Smooth transition */
+            border-radius: 50%;
+        }
+        .footer-btn:hover {
+            background-color: #772808; /* Turns purple on hover */
+        }
+        .social-icons-down {
+            position: absolute;
+            bottom: 40px; /* 40px above the bottom */
+            left: 52px; /* First icon starts 52px from the left */
+            display: flex;
+            gap: 26px; /* 26px spacing between each icon */
+        }
+
+        .social-icons-down img {
+            width: 25px;
+            height: 24px;
+        }
+                .footer-text {
+            position: absolute;
+            bottom: 51px; /* 51px from the bottom */
+            right: 2px; /* 2px from the right */
+            font-size: 12px;
+            font-weight: 400; /* Semibold */
+            color: white;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <!-- Logo -->
+        <div class="logo-circle">
+            <img src="moodtuneslogo.png" alt="Logo"> <!-- Replace with actual logo -->
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="nav-links">
+            <span class="active"></span> <!-- Background hovering over Home -->
+            <a href="Home.htm">Home</a>
+            <a href="MusicLib.htm"><span class="span">Music Library</span></a>
+            <a href="aboutUs.htm">About Us</a>
+        </div>
+        <!-- Navbar Buttons -->
+<!-- Navbar Buttons -->
+<div class="nav-buttons">
+    <button class="join-btn">
+        Join Us <span class="arrow"><s>→</s></span>
+    </button>
+    <a href="aboutUs.htm"><button class="contact-btn">
+        Contact Us <span class="arrow"><s>→</s></span>
+    </button></a>
+</div>
+
+    </div>
+    <!-- Main Heading -->
+<h1 class="main-heading">Tune Into Your Feelings, One <br> Song at a Time!</h1>
+
+<!-- Subheading -->
+<p class="sub-heading">
+    Dive into a musical experience that transforms your mood. 
+    Let the rhythm guide your journey.
+</p>
+		<!-- Button Container -->
+<div class="btn-container">
+    <button class="start-btn">Start your journey</button>
+    <a href="aboutUs.htm"><button class="learn-btn">Learn more about us &nbsp<span class="arrow"><s>→</s></span></button></a>
+</div>
+		<!-- Social Icons -->
+<div class="social-icons">
+    <a href="https://twitter.com" target="_blank">
+        <img src="https://assets.stickpng.com/thumbs/64be60d72112bdfca69a01f0.png" alt="X Logo">
+    </a>
+    <a href="https://instagram.com" target="_blank">
+        <img src="https://p7.hiclipart.com/preview/905/247/762/logo-clip-art-icon-ig.jpg" alt="Instagram Logo">
+    </a>
+</div>
+	<!-- Featured Image -->
+<div class="featured-image">
+    <img src="wegic2.png" alt="Featured Image">
+</div>
+
+<!-- Mood Text & Search Container -->
+<div class="mood-text-container">
+    <div class="text-content">
+        <h2 style="font-size: 37px;font-weight: 500; /* Medium */color: #1E1E1E;">Let Your Mood Pick the Music!</h2>
+        <p>Choose from a variety of moods and genres to match your vibe</p>
+    </div>
+    <div class="search-container">
+        <div class="options-icon">☰</div>
+        <input type="text" class="search-bar" placeholder="Search here">
+        <button class="search-button">🔍</button>
+    </div>
+</div>
+
+</div>
+	<div class="mood-circles-container">
+    <div class="mood-item">
+        <div class="mood-circle" style="background-image: url('chill.jpeg');"></div>
+        <div class="mood-circle-text">Chill</div>
+    </div>
+    <div class="mood-item">
+        <div class="mood-circle" style="background-image: url('energetic.jpeg');"></div>
+        <div class="mood-circle-text">Energetic</div>
+    </div>
+    <div class="mood-item">
+        <div class="mood-circle" style="background-image: url('happy.jpeg');"></div>
+        <div class="mood-circle-text">Happy</div>
+    </div>
+    <div class="mood-item">
+        <div class="mood-circle" style="background-image: url('focus.jpeg');"></div>
+        <div class="mood-circle-text">Focus</div>
+    </div>
+    <div class="mood-item">
+        <div class="mood-circle" style="background-image: url('relax.jpeg');"></div>
+        <div class="mood-circle-text">Relax</div>
+    </div>
+    <div class="mood-item">
+        <div class="mood-circle" style="background-image: url('party.jpeg');"></div>
+        <div class="mood-circle-text">Party</div>
+    </div>
+</div>
+	<button class="explore-btn">
+    Explore All Moods <span class="arrow"><s>→</s></span>
+</button>
+	<div class="workout-container">
+    <img src="workout.jpeg" alt="Workout Image" class="workout-image">
+    <div class="workout-text">Workout</div>
+    <div class="workout-subtext">Boost your energy with upbeat tracks.</div>
+</div>
+	<div class="orange-container">
+    <div class="feature-container">
+    <div class="feature-box">
+        <img src="moodtuneslogo.png">
+    </div>
+    <p class="send-message">SEND A MESSAGE</p>
+     <p class="support-email">support@moodtunes.com</p>
+     <p class="follow">FOLLOW US</p>
+     <p class="IG">Instagram</p>
+     <p class="FB">Facebook</p>
+     <p class="X">X</p>
+     <p class="LinkedIn">LinkedIn</p>
+</div>
+    <div class="floating-text">Curated Playlist for</br> Every Mood</div>   
+    <button class="white-button"><s> →</s>Discover Playlists</button>
+    <p class="get-in-touch-text">Get in touch with MoodTunes.</p>
+    <p class="questions-text">Have questions</br> or feedback?</p>
+    <p class="working-hours">Monday-Friday, 9:00 am to 6:00 pm</p>
+    <p class="assist-text">Our team is here to assist you</p>
+</div>
+<div class="footer-container">
+    <a href="aboutUs.htm"><button class="footer-btn">About </button></a>
+    <button class="footer-btn">Music Library</button>
+    <a href="Home.htm"><button class="footer-btn">Home</button></a>
+    <div class="social-icons-down">
+    <img src="https://th.bing.com/th/id/OIP.OiRP0Wt_nlImTXz5w45aRQHaHa?w=179&h=180&c=7&r=0&o=5&pid=1.7" alt="X">
+    <img src="https://th.bing.com/th/id/OIP.VDkf14-_VAgjryLveN3ImQHaFj?w=236&h=180&c=7&r=0&o=5&pid=1.7" alt="Instagram">
+    <img src="https://th.bing.com/th/id/OIP.Epny8hrB3lx_Zhyo8ZDQbwHaHa?w=200&h=200&c=7&r=0&o=5&pid=1.7" alt="Facebook">
+    <img src="https://th.bing.com/th/id/OIP.mosbcX5Zs-JQZmAa1JZLcQHaHa?pid=ImgDet&w=199&h=199&c=7" alt="GitHub">
+</div>
+     <p class="footer-text">©MoodTunes 2025, Bringing Music to your Mood</p>
+</div>
+
+</div>
+
+
+</body>
+</html>
