@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <style>
+    <style id="desktop-style">
         body {
             background-color: #F8EBFF;
             margin: 0;
@@ -629,11 +629,697 @@
         }
     }
     </style>
+    <style id="tablet-style" disabled>
+    	/* ===== TABLET/MOBILE STYLES (992px and below) ===== */
+:root {
+    --primary-color: #772708;
+    --secondary-color: #330808;
+    --bg-color: #F8EBFF;
+    --text-dark: #1E1E1E;
+    --text-light: #FFFFFF;
+    --border-color: #DF6C7B;
+}
+
+/* Base Reset */
+body {
+    background-color: var(--bg-color);
+    overflow-x: hidden;
+    padding-bottom: 20px;
+}
+
+/* Navbar (Identical to Music Library) */
+.navbar {
+    background-color: white;
+    width: 95%;
+    max-width: 100%;
+    height: auto;
+    padding: 12px 20px;
+    border-radius: 45px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.mobile-menu-btn {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--secondary-color);
+    cursor: pointer;
+    order: 1;
+    padding: 5px;
+}
+
+* Logo circle */
+.logo-circle {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 65.5px;
+    top: 7px;
+    bottom: 7px;
+}
+
+/* Placeholder for the logo */
+.logo-circle img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.nav-links {
+    display: none;
+    width: 100%;
+    order: 4;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(51, 8, 8, 0.1);
+}
+
+.nav-links.show {
+    display: flex;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px;
+    text-align: center;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.nav-links .span {
+    background-color: var(--primary-color);
+    color: white;
+    height: 35px;
+    width: auto;
+    min-width: 75px;
+    margin: 0 auto;
+}
+
+.nav-buttons {
+    display: none;
+    width: 100%;
+    order: 5;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(51, 8, 8, 0.1);
+}
+
+.nav-buttons.show {
+    display: flex;
+}
+
+.nav-buttons button {
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    flex: 1;
+    max-width: 150px;
+    justify-content: center;
+}
+
+/* Join Us Button */
+.join-btn {
+    background-color: #F8EBFF;
+    color: #330808;
+}
+
+/* Contact Us Button */
+.contact-btn {
+    background-color: #330808;
+    color: #F8EBFF;
+}
+
+/* Arrow Styles */
+.arrow {
+    font-size: 16px;
+}
+
+/* Main Content (Identical to Music Library) */
+.main-heading {
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: center;
+    padding-top: 100px;
+    margin: 0 auto 15px;
+    line-height: 1.2;
+    max-width: 90%;
+}
+
+.sub-heading {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--text-dark);
+    text-align: center;
+    margin: 0 auto 30px;
+    max-width: 90%;
+}
+
+/* Button Container (Identical to Music Library) */
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 30px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.btn-container button {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 11px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
+}
+
+.start-btn {
+    background-color: var(--secondary-color);
+    color: var(--bg-color);
+}
+
+.learn-btn {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+}
+/* Social Icons Container */
+.social-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+/* Social Icons */
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+/* Featured Image (Adjusted for Home) */
+.featured-image {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.featured-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Mood Section (Matches Music Library categories) */
+.mood-text {
+    width: 90%;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+.mood-text h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.mood-text p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    opacity: 0.8;
+}
+
+.mood-circles-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.mood-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mood-circle {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid var(--border-color);
+    margin-bottom: 10px;
+}
+
+.mood-circle-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    text-align: center;
+}
+
+/* Explore Button (Identical to Music Library) */
+.explore-btn {
+    width: 200px;
+    height: 50px;
+    background-color: white;
+    color: var(--text-dark);
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 auto 40px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+/* Workout Section (Unique to Home) */
+.workout-container {
+    width: 90%;
+    max-width: 800px;
+    height: auto;
+    margin: 0 auto 40px;
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.workout-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.workout-text {
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.9);
+}
+
+.workout-subtext {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    color: white;
+}
+
+/* Video Section (Identical to Music Library) */
+.video-section {
+    padding: 2rem 1rem;
+    background-color: var(--bg-color);
+}
+
+.video-section-heading {
+    color: var(--text-dark);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+
+.video-wrapper:hover {
+    transform: translateY(-5px);
+}
+
+/* Orange Container (Identical to Music Library) */
+.orange-container {
+    width: 100%;
+    height: auto;
+    background-color: var(--primary-color);
+    margin-top: 60px;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.feature-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature-box {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    aspect-ratio: 1/1;
+    background-color: rgba(51, 11, 11, 0.4);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.quadrant {
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lead-text {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.sub-text {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: white;
+}
+
+.floating-text {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    margin: 20px auto;
+    line-height: 1.2;
+}
+
+.white-button {
+    background-color: white;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 9px;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 20px auto;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 227px;
+}
+
+/* Contact Info (Identical to Music Library) */
+.contact-info-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    color: white;
+}
+
+.send-message,
+.support-email,
+.follow,
+.IG,
+.FB,
+.X,
+.LinkedIn {
+    text-align: center;
+    margin: 5px 0;
+    font-size: 1.1rem;
+}
+
+.get-in-touch-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    margin: 30px 0 10px;
+}
+
+.questions-text {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+    margin: 0 0 20px;
+    line-height: 1.2;
+}
+
+.working-hours {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #D9D9D9;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.assist-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #D9D9D9;
+    text-align: center;
+    margin: 10px 0 30px;
+}
+
+/* Footer (Identical to Music Library) */
+.footer-container {
+    width: 100%;
+    height: auto;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-btn {
+    font-size: 1rem;
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.footer-btn:hover {
+    background-color: var(--primary-color);
+}
+.social-icons-down {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.social-icons-down img {
+    width: 25px;
+    height: 24px;
+}
+.footer-text {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .main-heading {
+        font-size: 2rem;
+    }
+    
+    .sub-heading {
+        font-size: 1rem;
+    }
+    
+    .mood-circles-container {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 400px;
+    }
+    
+    .workout-text {
+        font-size: 1.5rem;
+        bottom: 50px;
+    }
+    
+    .workout-subtext {
+        font-size: 0.9rem;
+        bottom: 30px;
+    }
+    
+    .feature-box {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        aspect-ratio: auto;
+        max-width: 400px;
+    }
+    
+    .floating-text {
+        font-size: 2rem;
+    }
+    
+    .questions-text {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mood-circles-container {
+        grid-template-columns: 1fr;
+        max-width: 200px;
+    }
+    
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-heading {
+        font-size: 1.8rem;
+    }
+    
+    .floating-text {
+        font-size: 1.8rem;
+    }
+    
+    .questions-text {
+        font-size: 1.5rem;
+    }
+}
+    </style>
+    <!-- JavaScript for CSS Switching -->
+    <script>
+        // Function to toggle between style blocks
+        function toggleStyles() {
+            const screenWidth = window.innerWidth;
+            const tabletBreakpoint = 992; // Tablet breakpoint
+            
+            const desktopStyle = document.getElementById('desktop-style');
+            const tabletStyle = document.getElementById('tablet-style');
+            
+            // Toggle mobile menu button visibility
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (screenWidth <= tabletBreakpoint) {
+                // Switch to tablet/mobile styles
+                desktopStyle.disabled = true;
+                tabletStyle.disabled = false;
+                mobileMenuBtn.style.display = 'block';
+                
+                // Initialize mobile menu functionality
+                mobileMenuBtn.addEventListener('click', function() {
+                    document.querySelector('.nav-links').classList.toggle('show');
+                    document.querySelector('.nav-buttons').classList.toggle('show');
+                });
+            } else {
+                // Switch to desktop styles
+                desktopStyle.disabled = false;
+                tabletStyle.disabled = true;
+                mobileMenuBtn.style.display = 'none';
+                
+                // Ensure desktop nav is visible
+                document.querySelector('.nav-links').classList.remove('show');
+                document.querySelector('.nav-buttons').classList.remove('show');
+            }
+        }
+
+        // Initial call when page loads
+        document.addEventListener('DOMContentLoaded', toggleStyles);
+
+        // Resize listener with debounce
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(toggleStyles, 250);
+        });
+    </script>
 </head>
 <body>
 
     <!-- Navbar -->
     <div class="navbar">
+    	 <button class="mobile-menu-btn">☰</button>
         <!-- Logo -->
         <div class="logo-circle">
             <img src="moodtuneslogo.png" alt="Logo"> <!-- Replace with actual logo -->

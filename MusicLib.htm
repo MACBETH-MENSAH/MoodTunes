@@ -1,10 +1,10 @@
-bz<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Library</title>
-    <style>
+    <style id="desktop-style">
         body {
             background-color: #F8EBFF;
             margin: 0;
@@ -688,13 +688,863 @@ bz<!DOCTYPE html>
         }
     }
 
-
     </style>
+  
+  <!-- Tablet styles (disabled by default) -->
+  <style id="tablet-style" disabled>
+    /* Your tablet-specific CSS here */
+   body {
+    background-color: #F8EBFF;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar styling */
+/* Navbar Styling Adjustments */
+.navbar {
+    background-color: white;
+    width: 95%;
+    max-width: 100%;
+    height: auto;
+    padding: 12px 20px;
+    border-radius: 45px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    position: relative;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+}
+
+/* Logo circle */
+/* Logo - Centered */
+.logo-circle {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    order: 2; /* Changed from 2 to maintain order */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* Placeholder for the logo */
+.logo-circle img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+/* Navbar links */
+.nav-links {
+    display: none;
+    width: 100%;
+    order: 4;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(51, 8, 8, 0.1);
+}
+
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+    position: relative;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-links .span {
+    background-color: #772708;
+    height: 35px;
+    width: auto;
+    min-width: 75px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Navbar Buttons */
+.nav-buttons {
+    display: none;
+    width: 100%;
+    order: 5;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(51, 8, 8, 0.1);
+}
+
+/* General Button Styles */
+.nav-buttons button {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    white-space: nowrap;
+}
+/* Mobile Menu Button - Right Aligned */
+.mobile-menu-btn {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--secondary-color);
+    cursor: pointer;
+    position: absolute;
+    right: 10%; /* Positions 10% from the right (same as 90% from left) */
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 5px;
+    z-index: 1001;
+}
+
+
+/* Join Us Button */
+.join-btn {
+    background-color: #F8EBFF;
+    color: #330808;
+}
+
+/* Contact Us Button */
+.contact-btn {
+    background-color: #330808;
+    color: #F8EBFF;
+}
+
+/* Arrow Styles */
+.arrow {
+    font-size: 16px;
+}
+
+/* Main Heading */
+.main-heading {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #1E1E1E;
+    text-align: center;
+    padding-top: 120px;
+    line-height: 1.2;
+    margin: 0 auto;
+    max-width: 90%;
+}
+
+/* Subheading */
+.sub-heading {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #1E1E1E;
+    text-align: center;
+    margin: 10px auto 0;
+    max-width: 90%;
+}
+
+/* Button Container */
+.btn-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 30px auto;
+    flex-wrap: wrap;
+    max-width: 90%;
+}
+
+/* General Button Styles */
+.btn-container button {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 11px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    white-space: nowrap;
+}
+
+/* Start Journey Button */
+.start-btn {
+    background-color: #330808;
+    color: #F8EBFF;
+}
+
+/* Learn More Button */
+.learn-btn {
+    background-color: transparent;
+    color: #330808;
+    border: 1px solid #330808;
+}
+
+/* Social Icons Container */
+.social-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+/* Social Icons */
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+/* Featured Image */
+.featured-image {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 90%;
+}
+
+.featured-image img {
+    width: 100%;
+    max-width: 1004px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Mood Text & Search Container */
+.mood-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 90%;
+    max-width: 1004px;
+    margin: 22px auto 0;
+}
+
+.text-content {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.text-content h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #1E1E1E;
+    margin-bottom: 10px;
+}
+
+.search-container {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+}
+
+.clear-btn {
+    font-size: 24px;
+    cursor: pointer;
+    border: solid;
+    padding: 10px;
+    border-color: rgba(128, 128, 128, 0.1);
+    border-top-left-radius: 28px;
+    border-bottom-left-radius: 28px;
+    background-color: rgba(128, 128, 128, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bar {
+    flex: 1;
+    height: 56px;
+    border: none;
+    border-color: rgba(128, 128, 128, 0.1);
+    padding-left: 16px;
+    font-size: 1rem;
+    background-color: rgba(128, 128, 128, 0.1);
+    outline: none;
+}
+
+.search-button {
+    width: 56px;
+    height: 56px;
+    border: solid;
+    border-color: rgba(128, 128, 128, 0.1);
+    background-color: rgba(128, 128, 128, 0.1);
+    cursor: pointer;
+    border-top-right-radius: 28px;
+    border-bottom-right-radius: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+/* Custom Container for Mood Categories */
+.custom-container {
+    width: 876px;
+    height: 162px;
+    background-color: rgba(144, 11, 9, 0.7);
+    border-radius: 10px;
+    margin: 55.8px auto 20px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.circle {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.chill {
+    font-size: 23px;
+    font-weight: 500;
+    color: #000000;
+}
+
+/* Tracks Container */
+.tracks_main-container,
+.tracks_main-containerP {
+    width: 704px;
+    height: 70px;
+    background-color: #D9D9D9;
+    border: 4px solid #DF6C7B;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 50px 10px 10px 50px;
+    position: relative;
+}
+
+.track_circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.track_text {
+    font-size: 1.1rem;
+    color: #666666;
+    font-weight: 500;
+}
+
+.track_text_sub {
+    font-size: 0.8rem;
+    color: #4A4A4A;
+    margin-top: 5px;
+    display: block;
+}
+
+.audio-wrapper {
+    margin-left: auto;
+    margin-right: 60px;
+    width: 200px;
+}
+
+audio {
+    width: 100%;
+    max-width: 200px;
+}
+
+.download-btn {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 33.6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.download-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.SecCspace {
+    height: 60px;
+}
+
+.Cspace {
+    height: 250px;
+}
+
+/* Video Section */
+.video-section {
+    padding: 4rem 1rem;
+    background-color: #F8EBFF;
+}
+
+.video-section-heading {
+    color: #1E1E1E;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1344px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #FFFFFF;
+    transition: transform 0.3s ease;
+}
+
+.video-wrapper:hover {
+    transform: translateY(-5px);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Orange Container */
+.orange-container {
+    width: 100%;
+    height: auto;
+    background-color: #772708;
+    margin-top: 106px;
+    position: relative;
+    padding: 40px 20px;
+}
+
+.feature-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.feature-box {
+    width: 600px;
+    height: 600px;
+    background-color: #330B0B;
+    opacity: 0.4;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 6px;
+    gap: 10px;
+    border-radius: 0px;
+    margin: 0 auto;
+}
+
+.feature-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.floating-text {
+    font-size: 3rem;
+    font-weight: 400;
+    color: white;
+    margin: 20px 0;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.white-button {
+    background-color: white;
+    color: #000;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 9px;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    margin: 20px auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+    width: 227px;
+}
+
+.contact-info-section {
+    margin-top: 40px;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.contact-info-section div {
+    margin-bottom: 15px;
+}
+
+.get-in-touch-text {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 30px 0 10px;
+}
+
+.questions-text {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 20px;
+    line-height: 1.2;
+}
+
+.working-hours {
+    color: #D9D9D9;
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin: 10px 0;
+}
+
+.assist-text {
+    color: #D9D9D9;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 10px 0 30px;
+}
+
+/* Footer */
+.footer-container {
+    width: 100%;
+    height: auto;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px 80px;
+    position: relative;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.footer-btn {
+    font-size: 1rem;
+    color: white;
+    background-color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    border-radius: 50px;
+}
+
+.footer-btn:hover {
+    background-color: #772808;
+}
+
+.social-icons-down {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.social-icons-down img {
+    width: 25px;
+    height: 24px;
+}
+
+.footer-text {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: white;
+    margin-top: 20px;
+}
+
+.mobile-menu-btn {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: var(--secondary-color);
+    cursor: pointer;
+    order: 1;
+    padding: 5px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .navbar {
+        width: 90%;
+        max-width: 1091px;
+        height: auto;
+        min-height: 50px;
+    }
+
+    .logo-circle {
+        position: static;
+        margin-right: auto;
+    }
+
+    .nav-buttons {
+        position: static;
+    }
+
+    .custom-container {
+        width: 90%;
+        max-width: 876px;
+    }
+
+    .tracks_main-container,
+    .tracks_main-containerP {
+        width: 90%;
+        max-width: 704px;
+    }
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        padding: 15px 20px;
+        flex-wrap: wrap;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        order: 1;
+    }
+
+    .logo-circle {
+        order: 2;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        order: 4;
+        flex-direction: column;
+        margin: 20px 0 0;
+    }
+
+    .nav-buttons {
+        order: 3;
+        margin-left: auto;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .main-heading {
+        font-size: 2.5rem;
+    }
+
+    .sub-heading {
+        font-size: 1.1rem;
+    }
+
+    .floating-text {
+        font-size: 2.5rem;
+    }
+
+    .questions-text {
+        font-size: 2rem;
+    }
+
+    .feature-box {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        aspect-ratio: 1/1;
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-container {
+        height: auto;
+        min-height: 162px;
+    }
+
+    .tracks_main-container,
+    .tracks_main-containerP {
+        height: auto;
+        min-height: 70px;
+        flex-wrap: wrap;
+        border-radius: 10px;
+        padding: 20px;
+    }
+
+    .audio-wrapper {
+        width: 100%;
+        margin: 15px 0;
+        order: 3;
+    }
+
+    .download-btn {
+        position: static;
+        transform: none;
+        margin: 10px auto;
+        order: 4;
+    }
+
+    .track_circle {
+        order: 1;
+    }
+
+    .text-container {
+        order: 2;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-heading {
+        font-size: 2rem;
+        padding-top: 100px;
+    }
+
+    .sub-heading {
+        font-size: 1rem;
+    }
+
+    .btn-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-container button {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .nav-buttons {
+        display: none;
+    }
+
+    .nav-links.show + .nav-buttons {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .floating-text {
+        font-size: 2rem;
+    }
+
+    .questions-text {
+        font-size: 1.8rem;
+    }
+
+    .video-section-heading {
+        font-size: 1.8rem;
+    }
+}
+  </style>
+   <!-- Script in head with event listener -->
+  <!-- JavaScript for Responsive Behavior -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Mobile menu toggle functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        const navButtons = document.querySelector('.nav-buttons');
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('show');
+                navButtons.classList.toggle('show');
+            });
+        }
+
+        // Style switching functionality
+        function toggleStyles() {
+            const screenWidth = window.innerWidth;
+            const tabletBreakpoint = 992;
+            
+            const desktopStyle = document.getElementById('desktop-style');
+            const tabletStyle = document.getElementById('tablet-style');
+            
+            if (screenWidth <= tabletBreakpoint) {
+                if (desktopStyle) desktopStyle.disabled = true;
+                if (tabletStyle) tabletStyle.disabled = false;
+            } else {
+                if (desktopStyle) desktopStyle.disabled = false;
+                if (tabletStyle) tabletStyle.disabled = true;
+                if (navLinks) navLinks.classList.remove('show');
+                if (navButtons) navButtons.classList.remove('show');
+            }
+        }
+
+        // Initial call
+        toggleStyles();
+
+        // Resize listener with debounce
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(toggleStyles, 250);
+        });
+    });
+</script>
+</head>
 </head>
 <body>
 
     <!-- Navbar -->
     <div class="navbar">
+        <button class="mobile-menu-btn">☰</button>
         <!-- Logo -->
         <div class="logo-circle">
             <img src="moodtuneslogo.png" alt="Logo"> <!-- Replace with actual logo -->
@@ -1644,7 +2494,7 @@ bz<!DOCTYPE html>
           <!-- Add 11 more video blocks below -->
         <div class="video-wrapper">
             <iframe src="https://www.youtube.com/embed/ANOTHER_ID" 
-              \      title="Video Title" 
+                      title="Video Title" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen></iframe>
         </div>
@@ -1701,6 +2551,8 @@ function performSearch() {
     
     // Select all track containers (both regular and P-variant styling)
     const tracks = document.querySelectorAll('.tracks_main-container, .tracks_main-containerP');
+    // Select all custom containers (mood categories)
+    const customContainers = document.querySelectorAll('.custom-container');
     
     // Flag to track if any matches found
     let found = false;
@@ -1708,52 +2560,63 @@ function performSearch() {
     // Reset all tracks to visible state before applying new filters
     tracks.forEach(track => track.style.display = 'flex');
     
-    // Only search if there's actual input
+    // Show/hide custom containers based on search term
     if (searchTerm) {
-        // Process each track container
-        tracks.forEach(track => {
-            // Get track title text and normalize case
-            const title = track.querySelector('.track_text').textContent.toLowerCase();
-            // Get artist name text and normalize case
-            const artist = track.querySelector('.track_text_sub').textContent.toLowerCase();
-            
-            // Check if search term exists in title OR artist
-            if (title.includes(searchTerm) || artist.includes(searchTerm)) {
-                // Show matching track
-                track.style.display = 'flex';
-                // Update found status
-                found = true;
-            } else {
-                // Hide non-matching tracks
-                track.style.display = 'none';
-            }
+        // Hide custom containers when searching
+        customContainers.forEach(container => {
+            container.style.display = 'none';
         });
-
-        // Handle error messages
+    } else {
+        // Show custom containers when search is empty
+        customContainers.forEach(container => {
+            container.style.display = 'flex'; // or 'block' depending on your layout
+        });
+        
+        // Remove any existing error message when search is empty
         const existingError = document.querySelector('.search-error');
-        if (!found) {
-            // Create new error only if none exists
-            if (!existingError) {
-                // Create error message element
-                const errorMsg = document.createElement('div');
-                // Set color to match design (#DF6C7B)
-                errorMsg.style.color = '#DF6C7B';
-                // Add spacing from search bar
-                errorMsg.style.marginTop = '10px';
-                // Set error text content
-                errorMsg.textContent = 'Track not available';
-                // Add class for future reference
-                errorMsg.classList.add('search-error');
-                // Insert after search container
-                document.querySelector('.search-container').after(errorMsg);
-            }
+        if (existingError) existingError.remove();
+        return; // Exit early since there's nothing to search
+    }
+
+    // Process each track container
+    tracks.forEach(track => {
+        // Get track title text and normalize case
+        const title = track.querySelector('.track_text').textContent.toLowerCase();
+        // Get artist name text and normalize case
+        const artist = track.querySelector('.track_text_sub').textContent.toLowerCase();
+        
+        // Check if search term exists in title OR artist
+        if (title.includes(searchTerm) || artist.includes(searchTerm)) {
+            // Show matching track
+            track.style.display = 'flex';
+            // Update found status
+            found = true;
         } else {
-            // Remove error if results found
-            if (existingError) existingError.remove();
+            // Hide non-matching tracks
+            track.style.display = 'none';
+        }
+    });
+
+    // Handle error messages
+    const existingError = document.querySelector('.search-error');
+    if (!found) {
+        // Create new error only if none exists
+        if (!existingError) {
+            // Create error message element
+            const errorMsg = document.createElement('div');
+            // Set color to match design (#DF6C7B)
+            errorMsg.style.color = '#DF6C7B';
+            // Add spacing from search bar
+            errorMsg.style.marginTop = '10px';
+            // Set error text content
+            errorMsg.textContent = 'Track not available';
+            // Add class for future reference
+            errorMsg.classList.add('search-error');
+            // Insert after search container
+            document.querySelector('.search-container').after(errorMsg);
         }
     } else {
-        // Clear error when search is empty
-        const existingError = document.querySelector('.search-error');
+        // Remove error if results found
         if (existingError) existingError.remove();
     }
 }
@@ -1766,6 +2629,11 @@ function clearSearch() {
     // Reset all tracks to visible state
     document.querySelectorAll('.tracks_main-container, .tracks_main-containerP').forEach(track => {
         track.style.display = 'flex';
+    });
+    
+    // Show all custom containers again
+    document.querySelectorAll('.custom-container').forEach(container => {
+        container.style.display = 'flex'; // or 'block' depending on your layout
     });
     
     // Remove any existing error message
