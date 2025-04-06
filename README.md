@@ -1,6 +1,6 @@
 MoodTunes - Mood-Based Music Search & Download Platform 🎵 A personal project by [MACBETH-MENSAH]
 
-🔗 [Live Demo](https://mood-tunes-murex.vercel.app/) | 🎨 [Figma Design (View Only)](https://www.figma.com/design/fHDfiIE01VpGVRxwXtU69H/Untitled?node-id=0-1&t=CZfhrt3HsxloKXNE-1) | 📂 Source Code (Private Repository)
+🔗 [Live Demo](https://mood-tunes-murex.vercel.app/) | 🎨 [Figma Design (View Only)](https://www.figma.com/design/fHDfiIE01VpGVRxwXtU69H/MoodTunes_mac?node-id=0-1&t=WIRErfIQVHhMeZUc-1) | 📂 Source Code (Private Repository)
 
 ⚠️ Strict Usage Policy Allowed ✔️ Viewing the live demo ✔️ Inspecting the Figma design in read-only mode
 
@@ -12,7 +12,7 @@ Violations will result in DMCA takedowns and institutional reports.
 
 Mood Intelligence 😊 Happy 😢 Sad ⚡ Energetic 🧘 Relaxed 🎯 Focus
 
-Design 🎨 [View Figma Prototype](https://www.figma.com/design/fHDfiIE01VpGVRxwXtU69H/Untitled?node-id=0-1&t=CZfhrt3HsxloKXNE-1) 📱 Fully responsive (Mobile → Desktop)
+Design 🎨 [View Figma Prototype](https://www.figma.com/design/fHDfiIE01VpGVRxwXtU69H/MoodTunes_mac?node-id=0-1&t=WIRErfIQVHhMeZUc-1) 📱 Fully responsive (Mobile → Desktop)
 
 🛠️ Technical Implementation Component Technology Frontend HTML5, CSS3, JavaScript (ES6+) Audio Player Web Audio API Design Tools Figma 📜 Legal Protection text Copy Copyright © [2025] [MACBETH-MENSAH]. All Rights Reserved.
 
